@@ -1,77 +1,89 @@
 package com.example.nian.androiddemo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
+import android.view.ViewGroup;
 
+import com.example.nian.androiddemo.dispatchView.DispatchTouchActivity;
+import com.example.nian.androiddemo.intent.IntentActivity;
 import com.example.nian.androiddemo.handlerThread.HandlerThreadDActivity;
+import com.example.nian.androiddemo.holder.TextViewHolder;
+import com.example.nian.androiddemo.scroller.ScrollerActivity;
 import com.example.nian.androiddemo.view.ViewActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btn1, btn2, btn3;
+public class MainActivity extends AppCompatActivity {
+
+
+    private RecyclerView mRecylerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.content_main);
+        Demo[] demos = {
+                new Demo(this, HandlerThreadDActivity.class, R.string.activity_handler_thread),
+                new Demo(this, ViewActivity.class, R.string.activity_simple_layout),
+                new Demo(this, ScrollerActivity.class, R.string.activity_scroller_layout),
+                new Demo(this, DispatchTouchActivity.class, R.string.activity_dispatch_layout),
+                new Demo(this, IntentActivity.class, R.string.activity_intent_layout),
 
-        btn1 = (Button) findViewById(R.id.button);
 
-        btn2 = (Button) findViewById(R.id.button2);
-        btn3 = (Button) findViewById(R.id.button3);
-        btn1.setOnClickListener(this);
-        btn2.setOnClickListener(this);
-        btn3.setOnClickListener(this);
+        };
+
+        mRecylerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecylerView.addItemDecoration(new MarginDecoration(this));
+        mRecylerView.setHasFixedSize(true);
+        mRecylerView.setAdapter(new MainAdapter(demos));
+        mRecylerView.setLayoutManager(new LinearLayoutManager(this));
+
+
     }
 
 
-    @Override
-    public void onClick(View v) {
+    public class MainAdapter extends RecyclerView.Adapter<TextViewHolder> {
 
-        switch (v.getId()) {
 
-            case R.id.button:
-                Intent itent = new Intent(this, HandlerThreadDActivity.class);
-                startActivity(itent);
+        private Demo[] demos;
 
-                break;
-            case R.id.button2:
 
-                Intent vIntent = new Intent(this, ViewActivity.class);
-                startActivity(vIntent);
-                break;
-
-            case R.id.button3:
-                ThreadA t1 = new ThreadA("t1");
-
-                synchronized (t1) {
-                    try {
-                        // 启动“线程t1”
-                        System.out.println(Thread.currentThread().getName() + " start t1");
-                        t1.start();
-
-                        // 主线程等待t1通过notify()唤醒。
-                        System.out.println(Thread.currentThread().getName() + " wait()");
-                        t1.wait();
-
-                        System.out.println(Thread.currentThread().getName() + " continue");
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                break;
+        public MainAdapter(Demo[] d) {
+            this.demos = d;
         }
 
+        @Override
+        public TextViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+            return new TextViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(final TextViewHolder holder, int position) {
+            final Demo demo = demos[position];
+            holder.mTvActivity.setText(demo.title);
+            holder.mTvActivity.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = holder.mTvActivity.getContext();
+                    context.startActivity(new Intent(context, demo.activityClass));
+                }
+            });
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return demos.length;
+        }
     }
+
 
     class ThreadA extends Thread {
 
@@ -85,6 +97,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // 唤醒当前的wait线程
                 notify();
             }
+        }
+    }
+
+    public static class Demo {
+        public final Class<?> activityClass;
+        public final String title;
+
+        public Demo(Context context, Class<?> activityClass, int titleId) {
+            this.activityClass = activityClass;
+            this.title = context.getString(titleId);
         }
     }
 }

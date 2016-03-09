@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">AndroidDemo</string>
     <string name="action_settings">Settings</string>
+
+    <string name="activity_handler_thread">HandlerThreadDActivity</string>
+    <string name="activity_simple_layout">activity_simple_layout</string>
+    <string name="activity_scroller_layout">activity_scroller_layout</string>
+    <string name="activity_dispatch_layout">activity_dispatch_layout</string>
+    <string name="activity_intent_layout">activity_intent_layout</string>
+
+    <string name="title_activity_empty">EmptyActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="intent_activity_tv">Intent_Activity!</string>
+
+
 </resources>
