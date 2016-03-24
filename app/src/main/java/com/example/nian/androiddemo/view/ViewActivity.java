@@ -11,11 +11,11 @@ public class ViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_view);
+       setContentView(R.layout.activity_view);
 
 
         // 测试onLayout onMeasure
-        setContentView(R.layout.activity_simple_layout);
+//        setContentView(R.layout.activity_simple_layout);
 
     }
 

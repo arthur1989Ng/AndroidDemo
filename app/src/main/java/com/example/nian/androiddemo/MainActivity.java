@@ -6,15 +6,19 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nian.androiddemo.customView.CustomViewActivity;
 import com.example.nian.androiddemo.dispatchView.DispatchTouchActivity;
 import com.example.nian.androiddemo.intent.IntentActivity;
 import com.example.nian.androiddemo.handlerThread.HandlerThreadDActivity;
 import com.example.nian.androiddemo.holder.TextViewHolder;
 import com.example.nian.androiddemo.scroller.ScrollerActivity;
+import com.example.nian.androiddemo.service.ServiceActivity;
 import com.example.nian.androiddemo.view.ViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 new Demo(this, ScrollerActivity.class, R.string.activity_scroller_layout),
                 new Demo(this, DispatchTouchActivity.class, R.string.activity_dispatch_layout),
                 new Demo(this, IntentActivity.class, R.string.activity_intent_layout),
-
+                new Demo(this, ServiceActivity.class, R.string.activity_service_layout),
+                new Demo(this, CustomViewActivity.class, R.string.activity_custom_view_activity),
 
         };
 
@@ -42,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
         mRecylerView.setHasFixedSize(true);
         mRecylerView.setAdapter(new MainAdapter(demos));
         mRecylerView.setLayoutManager(new LinearLayoutManager(this));
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int screenWidth = dm.widthPixels;// 屏幕宽度，单位为px
+        int screenHeight = dm.heightPixels;// 屏幕高度，单位为px
+        int densityDpi = dm.densityDpi;// 屏幕密度，单位为dpi
+        float scale = dm.density;// 缩放系数，值为 densityDpi/160
+        float fontScale = dm.scaledDensity;// 文字缩放系数，同scale
+
+        Log.d("--NG--", "屏幕宽度  " + screenWidth + "  屏幕高度   " + screenHeight);
+        Log.d("--NG--", "屏幕密度  " + densityDpi);
+        Log.d("--NG--", "缩放系数  " + scale);
+        Log.d("--NG--", "文字缩放系数  " + fontScale);
 
 
     }

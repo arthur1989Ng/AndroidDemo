@@ -25,17 +25,17 @@ public class View1 extends LinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure");
+        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure");
         int specModeWidth = MeasureSpec.getMode(widthMeasureSpec);
         int specModeHight = MeasureSpec.getMode(heightMeasureSpec);
 
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure--AT_MOST:" + MeasureSpec.AT_MOST);
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure--EXACTLY:" + MeasureSpec.EXACTLY);
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure--UNSPECIFIED:" + MeasureSpec.UNSPECIFIED);
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure--specModeWidth:" + specModeWidth);
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure--specModeHight:" + specModeHight);
+//        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure--AT_MOST:" + MeasureSpec.AT_MOST);
+//        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure--EXACTLY:" + MeasureSpec.EXACTLY);
+//        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure--UNSPECIFIED:" + MeasureSpec.UNSPECIFIED);
+//        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure--specModeWidth:" + specModeWidth);
+//        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure--specModeHight:" + specModeHight);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.e("view", "@@@@@@@@@@@@view1:调用view1的ononMeasure##############");
+        Log.e("view", "@@@@@@@@@@@@view1:调用view1的onMeasure##############");
     }
 
     @Override
