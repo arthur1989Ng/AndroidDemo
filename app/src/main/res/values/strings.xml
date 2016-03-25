@@ -13,6 +13,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="intent_activity_tv">Intent_Activity!</string>
     <string name="activity_service_layout">Service_Activity!</string>
-
-    <string name="activity_custom_view_activity">Custom_View_Activity!</string>
+    <string name="activity_custom_view">Custom_View_Activity!</string>
+    <string name="activity_leak">Leak_Activity!</string>
 </resources>

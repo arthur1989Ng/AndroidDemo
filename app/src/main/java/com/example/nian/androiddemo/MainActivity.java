@@ -17,6 +17,7 @@ import com.example.nian.androiddemo.dispatchView.DispatchTouchActivity;
 import com.example.nian.androiddemo.intent.IntentActivity;
 import com.example.nian.androiddemo.handlerThread.HandlerThreadDActivity;
 import com.example.nian.androiddemo.holder.TextViewHolder;
+import com.example.nian.androiddemo.leak.LeakActivity;
 import com.example.nian.androiddemo.scroller.ScrollerActivity;
 import com.example.nian.androiddemo.service.ServiceActivity;
 import com.example.nian.androiddemo.view.ViewActivity;
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 new Demo(this, DispatchTouchActivity.class, R.string.activity_dispatch_layout),
                 new Demo(this, IntentActivity.class, R.string.activity_intent_layout),
                 new Demo(this, ServiceActivity.class, R.string.activity_service_layout),
-                new Demo(this, CustomViewActivity.class, R.string.activity_custom_view_activity),
+                new Demo(this, CustomViewActivity.class, R.string.activity_custom_view),
+                new Demo(this, LeakActivity.class, R.string.activity_leak),
 
         };
 

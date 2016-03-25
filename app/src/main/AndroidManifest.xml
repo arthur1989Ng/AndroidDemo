@@ -42,8 +42,10 @@
             android:label="@string/activity_service_layout"/>
         <activity
             android:name=".customView.CustomViewActivity"
-            android:label="@string/activity_custom_view_activity"/>
-
+            android:label="@string/activity_custom_view"/>
+        <activity
+            android:name=".leak.LeakActivity"
+            android:label="@string/activity_leak"/>
         <service
             android:name=".service.AdditionService"
             android:enabled="true"
