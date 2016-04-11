@@ -15,4 +15,6 @@
     <string name="activity_service_layout">Service_Activity!</string>
     <string name="activity_custom_view">Custom_View_Activity!</string>
     <string name="activity_leak">Leak_Activity!</string>
+    <string name="activity_grid_view">GridViewActivity!</string>
+    <string name="activity_proxy">ProxyActivity!</string>
 </resources>

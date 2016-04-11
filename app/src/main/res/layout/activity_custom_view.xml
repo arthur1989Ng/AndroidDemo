@@ -1,9 +1,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        xmlns:ng="http://schemas.android.com/apk/res/com.example.nian.androiddemo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
@@ -38,6 +40,17 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_marginTop="20dp" />
+
+        <com.example.nian.androiddemo.customView.CustomView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            ng:image="@mipmap/ic_launcher"
+            ng:imageScaleType="center"
+            ng:titleText="hello andorid ! "
+            ng:titleTextColor="#ff0000"
+            ng:titleTextSize="30sp" />
 
     </LinearLayout>
 

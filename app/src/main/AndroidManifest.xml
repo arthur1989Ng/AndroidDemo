@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nian.androiddemo">
 
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -36,21 +41,34 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".intent.IntentActivity"
-            android:label="@string/title_activity_empty"/>
+            android:label="@string/title_activity_empty" />
         <activity
             android:name=".service.ServiceActivity"
-            android:label="@string/activity_service_layout"/>
+            android:label="@string/activity_service_layout" />
         <activity
             android:name=".customView.CustomViewActivity"
-            android:label="@string/activity_custom_view"/>
+            android:label="@string/activity_custom_view" />
         <activity
             android:name=".leak.LeakActivity"
-            android:label="@string/activity_leak"/>
+            android:label="@string/activity_leak" />
+        <activity
+            android:name=".MyGridView.GridViewActivity"
+            android:label="@string/activity_grid_view" />
+        <activity
+            android:name=".dynamicloadhost.ProxyActivity"
+            android:label="@string/activity_proxy">
+            <intent-filter>
+                <action android:name="com.ryg.dynamicload.proxy.activity.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".service.AdditionService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />
+
     </application>
 
 </manifest>

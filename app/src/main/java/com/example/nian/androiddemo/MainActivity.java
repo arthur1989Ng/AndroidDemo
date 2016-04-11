@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nian.androiddemo.MyGridView.GridViewActivity;
 import com.example.nian.androiddemo.customView.CustomViewActivity;
 import com.example.nian.androiddemo.dispatchView.DispatchTouchActivity;
+import com.example.nian.androiddemo.dynamicloadhost.ProxyActivity;
 import com.example.nian.androiddemo.intent.IntentActivity;
 import com.example.nian.androiddemo.handlerThread.HandlerThreadDActivity;
 import com.example.nian.androiddemo.holder.TextViewHolder;
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 new Demo(this, ServiceActivity.class, R.string.activity_service_layout),
                 new Demo(this, CustomViewActivity.class, R.string.activity_custom_view),
                 new Demo(this, LeakActivity.class, R.string.activity_leak),
-
+                new Demo(this, GridViewActivity.class, R.string.activity_grid_view),
+                new Demo(this, ProxyActivity.class, R.string.activity_proxy),
         };
 
         mRecylerView = (RecyclerView) findViewById(R.id.recycler_view);

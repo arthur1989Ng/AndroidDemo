@@ -55,7 +55,7 @@ public class TaiJi extends View {
         int height = canvas.getHeight();                        //画布高度
 
 
-        Log.d("--NG--", "TaiJi  width  " + width + "  height  " + height);
+//        Log.d("--NG--", "TaiJi  width  " + width + "  height  " + height);
         Point centerPoint = new Point(width / 2, height / 2);   //画布中心点
         canvas.translate(centerPoint.x, centerPoint.y); //将画布移动到中心
         //绘制两个半圆
