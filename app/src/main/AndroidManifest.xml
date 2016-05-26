@@ -59,6 +59,7 @@
             android:label="@string/activity_proxy">
             <intent-filter>
                 <action android:name="com.ryg.dynamicload.proxy.activity.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -69,6 +70,7 @@
             android:exported="true"
             android:process=":remote" />
 
+        <activity android:name=".TabsTitleView.TabsTitleActivity"></activity>
     </application>
 
 </manifest>

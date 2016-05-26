@@ -4,11 +4,30 @@
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray">
 
-    <com.example.nian.androiddemo.scroller.SlideCutListView
-        android:id="@+id/slideCutListView"
+    <!-- <com.example.nian.androiddemo.scroller.SlideCutListView
+         android:id="@+id/slideCutListView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:cacheColorHint="@android:color/transparent"
+         android:divider="@color/light_blue_300"
+         android:listSelector="@android:color/transparent" />-->
+
+
+    <com.example.nian.androiddemo.scroller.MyScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="@color/light_blue_300"
-        android:listSelector="@android:color/transparent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="212313213 " />
+        </LinearLayout>
+
+    </com.example.nian.androiddemo.scroller.MyScrollView>
 </RelativeLayout>

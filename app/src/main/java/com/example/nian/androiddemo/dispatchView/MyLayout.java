@@ -14,13 +14,12 @@ public class MyLayout extends LinearLayout {
         super(context, attrs);
     }
 
-  /*  @Override
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.d("TAG", "MyLayout  onInterceptTouchEvent");
 
-        return super.onInterceptTouchEvent(ev);
+        return super.onInterceptTouchEvent(ev) ;
     }
-*/
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -28,5 +27,11 @@ public class MyLayout extends LinearLayout {
         Log.d("TAG", "MyLayout  dispatchTouchEvent");
 
         return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.d("TAG", "MyLayout  onTouchEvent");
+        return super.onTouchEvent(event);
     }
 }

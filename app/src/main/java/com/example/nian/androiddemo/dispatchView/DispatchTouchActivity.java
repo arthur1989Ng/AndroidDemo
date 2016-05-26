@@ -14,7 +14,6 @@ import com.example.nian.androiddemo.R;
  */
 public class DispatchTouchActivity extends Activity {
 
-
     private MyLayout myLayout;
     private Button button1, button2;
 
@@ -29,6 +28,14 @@ public class DispatchTouchActivity extends Activity {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
 
+        button1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                Log.d("TAG", "button1 on touch");
+                return true;
+            }
+        });
 
         myLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -51,12 +58,19 @@ public class DispatchTouchActivity extends Activity {
         });
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
 
- /*   @Override
+        Log.d("TAG", "Activity  onTouchEvent  " + event.getAction());
+        return super.onTouchEvent(event);
+    }
+
+    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
 
         Log.d("TAG", " DispatchTouchActivity  dispatchTouchEvent");
 
         return super.dispatchTouchEvent(ev);
-    }*/
+    }
+
 }
