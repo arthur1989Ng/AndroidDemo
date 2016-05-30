@@ -20,6 +20,7 @@ import com.example.nian.androiddemo.intent.IntentActivity;
 import com.example.nian.androiddemo.handlerThread.HandlerThreadDActivity;
 import com.example.nian.androiddemo.holder.TextViewHolder;
 import com.example.nian.androiddemo.leak.LeakActivity;
+import com.example.nian.androiddemo.mvptest.MVPTestActiviy;
 import com.example.nian.androiddemo.scroller.ScrollerActivity;
 import com.example.nian.androiddemo.service.ServiceActivity;
 import com.example.nian.androiddemo.view.ViewActivity;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 new Demo(this, LeakActivity.class, R.string.activity_leak),
                 new Demo(this, GridViewActivity.class, R.string.activity_grid_view),
                 new Demo(this, ProxyActivity.class, R.string.activity_proxy),
+                new Demo(this, MVPTestActiviy.class, R.string.activity_mvp_view),
+
         };
 
         mRecylerView = (RecyclerView) findViewById(R.id.recycler_view);

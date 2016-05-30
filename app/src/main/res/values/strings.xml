@@ -17,4 +17,6 @@
     <string name="activity_leak">Leak_Activity!</string>
     <string name="activity_grid_view">GridViewActivity!</string>
     <string name="activity_proxy">ProxyActivity!</string>
+    <string name="activity_mvp_view">MVP_TEST!</string>
+
 </resources>

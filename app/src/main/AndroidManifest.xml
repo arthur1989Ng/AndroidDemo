@@ -55,6 +55,9 @@
             android:name=".MyGridView.GridViewActivity"
             android:label="@string/activity_grid_view" />
         <activity
+            android:name=".mvptest.MVPTestActiviy"
+            android:label="@string/activity_mvp_view" />
+        <activity
             android:name=".dynamicloadhost.ProxyActivity"
             android:label="@string/activity_proxy">
             <intent-filter>
@@ -70,7 +73,7 @@
             android:exported="true"
             android:process=":remote" />
 
-        <activity android:name=".TabsTitleView.TabsTitleActivity"></activity>
+        <activity android:name=".TabsTitleView.TabTitleActivity"></activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.nian.androiddemo.R;
 
-public class TabsTitleActivity extends AppCompatActivity {
+public class TabTitleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

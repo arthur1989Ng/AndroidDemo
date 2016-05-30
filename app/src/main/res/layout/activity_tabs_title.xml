@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.nian.androiddemo.TabsTitleView.TabsTitleActivity">
+    tools:context=".TabsTitleView.TabTitleActivity">
 
     <com.example.nian.androiddemo.TabsTitleView.TabTitleView
         android:id="@+id/news_tabs_titles"
